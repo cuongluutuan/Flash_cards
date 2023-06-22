@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            next = new Button();
-            back = new Button();
             label1 = new Label();
             answer1 = new Button();
             answer3 = new Button();
@@ -37,28 +35,6 @@
             answer4 = new Button();
             questionContent = new RichTextBox();
             SuspendLayout();
-            // 
-            // next
-            // 
-            next.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            next.Location = new Point(808, 505);
-            next.Name = "next";
-            next.Size = new Size(94, 34);
-            next.TabIndex = 5;
-            next.Text = "Next";
-            next.UseVisualStyleBackColor = true;
-            next.Click += next_Click;
-            // 
-            // back
-            // 
-            back.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            back.Location = new Point(67, 505);
-            back.Name = "back";
-            back.Size = new Size(94, 34);
-            back.TabIndex = 7;
-            back.Text = "Back";
-            back.UseVisualStyleBackColor = true;
-            back.Click += back_Click;
             // 
             // label1
             // 
@@ -78,7 +54,7 @@
             answer1.TabIndex = 10;
             answer1.Text = "answer1";
             answer1.UseVisualStyleBackColor = true;
-            answer1.Click += answer1_Click;
+            answer1.Click += answer_Click;
             // 
             // answer3
             // 
@@ -88,27 +64,24 @@
             answer3.TabIndex = 11;
             answer3.Text = "answer3";
             answer3.UseVisualStyleBackColor = true;
-            answer3.Click += answer3_Click;
             // 
             // answer2
             // 
-            answer2.Location = new Point(571, 408);
+            answer2.Location = new Point(571, 314);
             answer2.Name = "answer2";
             answer2.Size = new Size(331, 71);
             answer2.TabIndex = 12;
             answer2.Text = "answer2";
             answer2.UseVisualStyleBackColor = true;
-            answer2.Click += answer2_Click;
             // 
             // answer4
             // 
-            answer4.Location = new Point(571, 315);
+            answer4.Location = new Point(571, 420);
             answer4.Name = "answer4";
             answer4.Size = new Size(331, 68);
             answer4.TabIndex = 13;
             answer4.Text = "answer4";
             answer4.UseVisualStyleBackColor = true;
-            answer4.Click += answer4_Click;
             // 
             // questionContent
             // 
@@ -131,8 +104,6 @@
             Controls.Add(answer3);
             Controls.Add(answer1);
             Controls.Add(label1);
-            Controls.Add(back);
-            Controls.Add(next);
             Name = "singleChoice";
             Text = "singleChoice";
             ResumeLayout(false);
@@ -140,9 +111,6 @@
         }
 
         #endregion
-
-        private Button next;
-        private Button back;
         private Label label1;
         private Button answer1;
         private Button answer3;
