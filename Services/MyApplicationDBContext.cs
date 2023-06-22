@@ -18,8 +18,8 @@ namespace Services
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database=FlashCard;TrustServerCertificate=True");
-                optionsBuilder.UseSqlServer(GetConnectionString());
+                optionsBuilder.UseSqlServer("Server=(local);uid=sa;pwd=12345;database=FlashCard;TrustServerCertificate=True");
+                //optionsBuilder.UseSqlServer(GetConnectionString());
             }
         }
 
