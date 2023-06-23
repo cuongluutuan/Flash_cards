@@ -31,7 +31,6 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            test = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -70,20 +69,10 @@
             dataGridView1.TabIndex = 9;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
-            // test
-            // 
-            test.AutoSize = true;
-            test.Location = new Point(323, 82);
-            test.Name = "test";
-            test.Size = new Size(50, 20);
-            test.TabIndex = 10;
-            test.Text = "label3";
-            // 
             // QuestionControls
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(test);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -99,6 +88,5 @@
         private Label label2;
         private Label label1;
         private DataGridView dataGridView1;
-        private Label test;
     }
 }

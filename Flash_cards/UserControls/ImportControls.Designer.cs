@@ -28,129 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            button1 = new Button();
+            label5 = new Label();
+            label6 = new Label();
+            button2 = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(35, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 48);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add a Flashcard";
+            label1.AutoSize = true;
+            label1.Font = new Font("Quicksand", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(28, 37);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(216, 40);
+            label1.TabIndex = 0;
+            label1.Text = "Add a Flashcard";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(35, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(641, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Enter the new flashcard details, then click Create to add to collection.\r\n";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(28, 88);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(540, 23);
+            label2.TabIndex = 1;
+            label2.Text = "Enter the new flashcard details, then click Create to add to collection.\r\n";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(35, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Question";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(28, 162);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(102, 28);
+            label3.TabIndex = 2;
+            label3.Text = "Collection";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(35, 272);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 32);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Answer";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(28, 218);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(115, 28);
+            label4.TabIndex = 3;
+            label4.Text = "Description";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 206);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 31);
-            this.textBox1.TabIndex = 4;
+            textBox1.Location = new Point(142, 165);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(342, 27);
+            textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(177, 275);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(427, 31);
-            this.textBox2.TabIndex = 5;
+            textBox2.Location = new Point(142, 220);
+            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(342, 27);
+            textBox2.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(414, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 34);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Save to Collection";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(331, 275);
+            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 27);
+            button1.TabIndex = 6;
+            button1.Text = "Save Collection";
+            button1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(35, 427);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(250, 48);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Import from file";
+            label5.AutoSize = true;
+            label5.Font = new Font("Quicksand", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(28, 342);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(210, 40);
+            label5.TabIndex = 7;
+            label5.Text = "Import from file";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(35, 491);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(349, 28);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Retrieves flashcard data from .csv file";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(28, 393);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(296, 23);
+            label6.TabIndex = 8;
+            label6.Text = "Retrieves flashcard data from .csv file";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(414, 556);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 34);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Import...";
-            this.button2.UseVisualStyleBackColor = true;
+            button2.Location = new Point(331, 445);
+            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(152, 27);
+            button2.TabIndex = 9;
+            button2.Text = "Import...";
+            button2.UseVisualStyleBackColor = true;
             // 
             // ImportControls
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "ImportControls";
-            this.Size = new System.Drawing.Size(790, 618);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button2);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(button1);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "ImportControls";
+            Size = new Size(632, 494);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

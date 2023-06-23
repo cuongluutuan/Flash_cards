@@ -22,7 +22,7 @@ namespace Flash_cards.Forms.MainForm
 
         private Control _currentControl;
 
-        
+
 
         public MainForm()
         {
@@ -51,7 +51,7 @@ namespace Flash_cards.Forms.MainForm
         private void ChangeControl(Panel panel, Control control)
         {
             if (panel is null || control is null) return;
-            
+
             panel.Controls.Remove(_currentControl);
             panel.Controls.Add(control);
             _currentControl = control;

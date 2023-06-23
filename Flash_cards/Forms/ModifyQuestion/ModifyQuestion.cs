@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Flash_cards.UserControls
+namespace Flash_cards.Forms.ModifyQuestion
 {
-    public partial class QuestionForm : UserControl
+    public partial class ModifyQuestion : Form
     {
-        public QuestionForm()
+        public ModifyQuestion()
         {
             InitializeComponent();
         }
