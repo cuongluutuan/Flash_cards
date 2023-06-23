@@ -31,6 +31,7 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView1 = new DataGridView();
+            test = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -38,47 +39,57 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(31, 61);
+            label2.Location = new Point(35, 81);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(193, 19);
+            label2.Size = new Size(227, 23);
             label2.TabIndex = 8;
-            label2.Text = "Shows a full list of flashcards\r\n";
+            label2.Text = "Shows a full list of collection";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(31, 23);
+            label1.Location = new Point(35, 31);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(158, 26);
+            label1.Size = new Size(325, 31);
             label1.TabIndex = 7;
-            label1.Text = "Flashcards List";
-            label1.Click += label1_Click;
+            label1.Text = "Flashcards Collection List";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 98);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(35, 131);
+            dataGridView1.Margin = new Padding(2, 3, 2, 3);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(478, 173);
+            dataGridView1.Size = new Size(563, 298);
             dataGridView1.TabIndex = 9;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // test
+            // 
+            test.AutoSize = true;
+            test.Location = new Point(323, 82);
+            test.Name = "test";
+            test.Size = new Size(50, 20);
+            test.TabIndex = 10;
+            test.Text = "label3";
             // 
             // QuestionControls
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(test);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "QuestionControls";
-            Size = new Size(553, 371);
+            Size = new Size(632, 495);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -88,5 +99,6 @@
         private Label label2;
         private Label label1;
         private DataGridView dataGridView1;
+        private Label test;
     }
 }
