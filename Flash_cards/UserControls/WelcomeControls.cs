@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace Flash_cards.UserControls
 {
     public partial class WelcomeControls : UserControl
     {
-        public WelcomeControls()
+        private UnitOfWork _unitOfWork;
+        public WelcomeControls(UnitOfWork unitOfWork)
         {
             InitializeComponent();
+            _unitOfWork = unitOfWork;
         }
     }
 }

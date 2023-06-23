@@ -8,21 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Flash_cards.UserControls;
+using Services.Repository;
 
 namespace Flash_cards.Forms.MainForm
 {
     public partial class MainForm : Form
     {
+        private UnitOfWork _unitOfWork = new UnitOfWork();
 
-        private UserControl _welcomeControls = new WelcomeControls();
-        private UserControl _importControls = new ImportControls();
-        private UserControl _questionControls = new QuestionControls();
+        private UserControl _welcomeControls;
+        private UserControl _importControls;
+        private UserControl _questionControls;
 
         private Control _currentControl;
+
+        
 
         public MainForm()
         {
             InitializeComponent();
+            _welcomeControls = new WelcomeControls(_unitOfWork);
+            _importControls = new ImportControls();
+            _questionControls = new QuestionControls(_unitOfWork);
+
             _currentControl = _welcomeControls;
             mainUIPanel.Controls.Clear();
             ToScrollable(mainUIPanel);

@@ -16,6 +16,6 @@ namespace Services.Models
         public string Answer { get; set;} = null!;
         public bool Learned { get; set; }
 
-        public virtual CardsCollection CardsCollection { get; set; }
+        public virtual CardsCollection? CardsCollection { get; set; }
     }
 }
