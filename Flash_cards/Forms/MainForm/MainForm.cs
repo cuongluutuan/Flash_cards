@@ -7,57 +7,70 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Flash_cards.Forms.MainForm.UserControls;
 using Flash_cards.UserControls;
+using Services.Repository;
 
 namespace Flash_cards.Forms.MainForm
 {
     public partial class MainForm : Form
     {
+        private UserControl _welcomeControls;
+        private UserControl _collectionControls;
+        private UserControl _questionsBankControls;
+        private Control _currentControl;
+        private UnitOfWork _unitOfWork;
         public MainForm()
         {
             InitializeComponent();
-            mainUIPanel.Controls.Clear();
-            mainUIPanel.Controls.Add(new WelcomeControls());
-        }
+            _unitOfWork = new UnitOfWork();
+            _welcomeControls = new WelcomeControls(_unitOfWork);
+            _collectionControls = new CollectionControls();
+            _questionsBankControls = new QuestionsBankControls(_unitOfWork);
 
-        private void handleImport(object sender, EventArgs e)
+            _currentControl = _welcomeControls;
+            mainUIPanel.Controls.Clear();
+            ToScrollable(mainUIPanel);
+            mainUIPanel.Controls.Add(_currentControl);
+        }
+        private void ToScrollable(Panel panel)
         {
-            mainUIPanel.Controls.Clear();
-            
-            /*Allows the Panel to be scrollable*/
-            mainUIPanel.AutoScroll = false;
-            mainUIPanel.HorizontalScroll.Enabled = false;
-            mainUIPanel.VerticalScroll.Visible = true;
-            mainUIPanel.AutoScroll = true;
-            /*----------------------------------*/
-            
-            mainUIPanel.Controls.Add(new ImportControls());
+            if (panel is not null)
+            {
+                panel.AutoScroll = false;
+                panel.HorizontalScroll.Enabled = false;
+                panel.VerticalScroll.Visible = true;
+                panel.AutoScroll = true;
+            }
         }
-
-        private void handleQuestionBank(object sender, EventArgs e)
+        private void ChangeControl(Panel panel, Control control)
         {
-            mainUIPanel.Controls.Clear();
+            if (panel is null || control is null) return;
 
-            /*Allows the Panel to be scrollable*/
-            mainUIPanel.AutoScroll = false;
-            mainUIPanel.HorizontalScroll.Enabled = false;
-            mainUIPanel.VerticalScroll.Visible = true;
-            mainUIPanel.AutoScroll = true;
-            /*----------------------------------*/
-            mainUIPanel.Controls.Add(new QuestionControls());
+            panel.Controls.Remove(_currentControl);
+            panel.Controls.Add(control);
+            _currentControl = control;
+
         }
-
         private void handleWelcome(object sender, EventArgs e)
         {
-            mainUIPanel.Controls.Clear();
-
-            /*Allows the Panel to be scrollable*/
-            mainUIPanel.AutoScroll = false;
-            mainUIPanel.HorizontalScroll.Enabled = false;
-            mainUIPanel.VerticalScroll.Visible = true;
-            mainUIPanel.AutoScroll = true;
-            /*----------------------------------*/
-            mainUIPanel.Controls.Add(new WelcomeControls());
+            ChangeControl(mainUIPanel, _welcomeControls);
         }
+        private void handleCollections(object sender, EventArgs e)
+        {
+            ChangeControl(mainUIPanel, _collectionControls);
+        }
+        private void handleQuestionBank(object sender, EventArgs e)
+        {
+            ChangeControl(mainUIPanel, _questionsBankControls);
+        }
+
+    
+        private void handleFlashcardsControl(object sender, EventArgs e)
+        {
+            
+        }
+
+       
     }
 }

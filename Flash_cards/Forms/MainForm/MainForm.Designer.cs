@@ -49,7 +49,7 @@
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(35, 25);
+            this.button4.Location = new System.Drawing.Point(35, 19);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(172, 136);
             this.button4.TabIndex = 4;
@@ -82,13 +82,14 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(47, 497);
+            this.button3.Location = new System.Drawing.Point(41, 490);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(144, 146);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Flash Cards";
+            this.button3.Text = "Collections";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.handleFlashcardsControl);
             // 
             // button2
             // 
@@ -101,9 +102,9 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(56, 330);
+            this.button2.Location = new System.Drawing.Point(41, 340);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 143);
+            this.button2.Size = new System.Drawing.Size(144, 143);
             this.button2.TabIndex = 11;
             this.button2.Text = "Question Bank";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -121,29 +122,30 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(56, 195);
+            this.button1.Location = new System.Drawing.Point(35, 184);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 100);
+            this.button1.Size = new System.Drawing.Size(151, 129);
             this.button1.TabIndex = 10;
             this.button1.Text = "Import";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.handleImport);
+            this.button1.Click += new System.EventHandler(this.handleCollections);
             // 
             // mainUIPanel
             // 
             this.mainUIPanel.Location = new System.Drawing.Point(257, 34);
             this.mainUIPanel.Name = "mainUIPanel";
-            this.mainUIPanel.Size = new System.Drawing.Size(790, 618);
+            this.mainUIPanel.Size = new System.Drawing.Size(934, 618);
             this.mainUIPanel.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1059, 689);
+            this.ClientSize = new System.Drawing.Size(1210, 689);
             this.Controls.Add(this.mainUIPanel);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.panel1.ResumeLayout(false);

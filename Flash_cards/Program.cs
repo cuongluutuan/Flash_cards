@@ -1,6 +1,6 @@
 using Flash_cards.Forms;
 using Flash_cards.Forms.MainForm;
-
+using Services.Utils;
 
 namespace Flash_cards
 {
@@ -15,6 +15,8 @@ namespace Flash_cards
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            MessageBoxManager.OK = "Agree";
+            MessageBoxManager.Cancel = "Cancel";
             Application.Run(new MainForm());
         }
     }

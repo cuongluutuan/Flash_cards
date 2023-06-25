@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,13 @@ using System.Windows.Forms;
 
 namespace Flash_cards.UserControls
 {
-    public partial class QuestionControls : UserControl
+    public partial class WelcomeControls : UserControl
     {
-        public QuestionControls()
+        private UnitOfWork _unitOfWork;
+        public WelcomeControls(UnitOfWork unitOfWork)
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            _unitOfWork = unitOfWork;
         }
     }
 }
