@@ -25,7 +25,7 @@ namespace Services.Repository
             }
         }
 
-        public BaseReposity<CardEntry> BaseReposity
+        public BaseReposity<CardEntry> CardEntryRepository
         {
             get
             {
