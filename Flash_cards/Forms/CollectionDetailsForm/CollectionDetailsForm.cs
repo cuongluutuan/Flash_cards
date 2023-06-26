@@ -54,7 +54,7 @@ namespace Flash_cards.Forms.QuestionForm
             collectionNameTxt.Text = _collectionName;
             collectionDescTxt.Text = collectionDesc;
 
-          
+            refreshQuestionList();  
 
         }
 
@@ -105,6 +105,24 @@ namespace Flash_cards.Forms.QuestionForm
                 _unitOfWork.CardEntryRepository.GetAll().
                 Where(entry => entry.CardsCollectionId
                     == cardsCollectionFullDetails.Id).ToList();
+
+
+            //Filters out the columns to be shown on the DataGridView
+            //should be the same as the columns in the database
+            string[] columnNames = { "Question", "Answer" }; 
+            int[] columnWidths = { 280, 280};
+            questionsGridView.AutoGenerateColumns = false;
+
+            for (int index = 0; index < columnNames.Length; index++)
+            {
+                DataGridViewTextBoxColumn dataGridViewTextBoxColumn
+                    = new DataGridViewTextBoxColumn();
+                //The column name (in the CardCollections Entity) to get the data from.
+                dataGridViewTextBoxColumn.DataPropertyName = columnNames[index];
+                dataGridViewTextBoxColumn.HeaderText = columnNames[index];
+                dataGridViewTextBoxColumn.Width = columnWidths[index];
+                questionsGridView.Columns.Add(dataGridViewTextBoxColumn);
+            }
             questionsGridView.DataSource = _cardEntries;
         }
         private void handleUpdateCollectionDetails(object sender, EventArgs e)

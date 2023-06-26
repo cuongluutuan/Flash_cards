@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -42,9 +42,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(733, 173);
+            this.button1.Location = new System.Drawing.Point(767, 173);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 74);
+            this.button1.Size = new System.Drawing.Size(126, 74);
             this.button1.TabIndex = 6;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
@@ -53,20 +53,20 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(733, 486);
+            this.button2.Location = new System.Drawing.Point(767, 486);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 74);
+            this.button2.Size = new System.Drawing.Size(126, 74);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Import...";
+            this.button2.Text = "Import";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(733, 274);
+            this.button4.Location = new System.Drawing.Point(767, 274);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 74);
+            this.button4.Size = new System.Drawing.Size(126, 74);
             this.button4.TabIndex = 55;
             this.button4.Text = "Details";
             this.button4.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(733, 379);
+            this.button5.Location = new System.Drawing.Point(767, 379);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(160, 74);
+            this.button5.Size = new System.Drawing.Size(126, 74);
             this.button5.TabIndex = 54;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = false;
@@ -89,19 +89,19 @@
             // collectionsGridView
             // 
             this.collectionsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.collectionsGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.collectionsGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.collectionsGridView.Location = new System.Drawing.Point(49, 173);
             this.collectionsGridView.Name = "collectionsGridView";
             this.collectionsGridView.RowHeadersWidth = 62;
             this.collectionsGridView.RowTemplate.Height = 33;
-            this.collectionsGridView.Size = new System.Drawing.Size(648, 387);
+            this.collectionsGridView.Size = new System.Drawing.Size(700, 387);
             this.collectionsGridView.TabIndex = 53;
             this.collectionsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.collectionsGridView_CellDoubleClick);
             // 

@@ -40,6 +40,21 @@ namespace Flash_cards.UserControls
                                             //new UoW instance, to refresh the updated Collection.
             _cardsCollections = _unitOfWork.
                 CardsCollectionRepository.GetAll();
+
+            //Filters out the columns to be shown on the DataGridView
+            string[] columnNames = { "Name", "Description" };
+            int[] columnWidths = { 300, 348 };
+            collectionsGridView.AutoGenerateColumns = false;
+            
+            for(int index=0;index<columnNames.Length;index++) { 
+                DataGridViewTextBoxColumn dataGridViewTextBoxColumn
+                    = new DataGridViewTextBoxColumn();  
+                //The column name (in the CardCollections Entity) to get the data from.
+                dataGridViewTextBoxColumn.DataPropertyName = columnNames[index];    
+                dataGridViewTextBoxColumn.HeaderText = columnNames[index];
+                dataGridViewTextBoxColumn.Width = columnWidths[index];
+                collectionsGridView.Columns.Add(dataGridViewTextBoxColumn);
+            }
             collectionsGridView.DataSource = _cardsCollections;
         }
         private void handleAddCollection(object sender, EventArgs e)

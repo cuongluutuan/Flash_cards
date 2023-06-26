@@ -71,9 +71,9 @@
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(598, 584);
+            this.button4.Location = new System.Drawing.Point(626, 584);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 34);
+            this.button4.Size = new System.Drawing.Size(101, 34);
             this.button4.TabIndex = 47;
             this.button4.Text = "Update";
             this.button4.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(598, 527);
+            this.button2.Location = new System.Drawing.Point(626, 527);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 34);
+            this.button2.Size = new System.Drawing.Size(101, 34);
             this.button2.TabIndex = 46;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
@@ -95,9 +95,9 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(598, 644);
+            this.button1.Location = new System.Drawing.Point(626, 644);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 34);
+            this.button1.Size = new System.Drawing.Size(101, 34);
             this.button1.TabIndex = 45;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = false;
@@ -131,7 +131,7 @@
             this.questionsGridView.Name = "questionsGridView";
             this.questionsGridView.RowHeadersWidth = 62;
             this.questionsGridView.RowTemplate.Height = 33;
-            this.questionsGridView.Size = new System.Drawing.Size(516, 225);
+            this.questionsGridView.Size = new System.Drawing.Size(560, 225);
             this.questionsGridView.TabIndex = 41;
             this.questionsGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.questionsGridView_CellMouseDoubleClick);
             // 
@@ -195,9 +195,9 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(598, 705);
+            this.button5.Location = new System.Drawing.Point(626, 705);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 47);
+            this.button5.Size = new System.Drawing.Size(101, 47);
             this.button5.TabIndex = 43;
             this.button5.Text = "Learn";
             this.button5.UseVisualStyleBackColor = false;
