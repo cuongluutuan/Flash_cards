@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Flash_cards.Forms.MainForm.UserControls;
+using Flash_cards.Forms.MainForm;
 using Flash_cards.UserControls;
 using Services.Repository;
 

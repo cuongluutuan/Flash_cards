@@ -1,4 +1,5 @@
-﻿using Services.Repository;
+﻿using Flash_cards.Forms.LearnForm;
+using Services.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,12 @@ namespace Flash_cards.UserControls
         {
             InitializeComponent();
             _unitOfWork = unitOfWork;
+        }
+
+        private void handleSelectCollection(object sender, EventArgs e)
+        {
+            ChooseCollect learnForm = new ChooseCollect();
+            learnForm.Show();   
         }
     }
 }
