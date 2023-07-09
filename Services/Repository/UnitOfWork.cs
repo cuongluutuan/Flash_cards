@@ -10,8 +10,8 @@ namespace Services.Repository
     public class UnitOfWork
     {
         private MyApplicationDBContext context = new MyApplicationDBContext();
-        private BaseReposity<CardsCollection> cardsCollectionRepository;
-        private BaseReposity<CardEntry> cardEntryRepository;
+        private BaseReposity<CardsCollection> cardsCollectionRepository = null!;
+        private BaseReposity<CardEntry> cardEntryRepository = null!;
 
         public BaseReposity<CardsCollection> CardsCollectionRepository 
         {
@@ -25,7 +25,7 @@ namespace Services.Repository
             }
         }
 
-        public BaseReposity<CardEntry> BaseReposity
+        public BaseReposity<CardEntry> CardEntryRepository
         {
             get
             {
