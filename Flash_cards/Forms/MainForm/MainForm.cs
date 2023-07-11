@@ -65,12 +65,12 @@ namespace Flash_cards.Forms.MainForm
             ChangeControl(mainUIPanel, _questionsBankControls);
         }
 
-    
+
         private void handleFlashcardsControl(object sender, EventArgs e)
         {
-            
+
         }
 
-       
+
     }
 }
