@@ -28,120 +28,128 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.collectionsGridView = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.collectionsGridView)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            button1 = new Button();
+            button2 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            collectionsGridView = new DataGridView();
+            label7 = new Label();
+            label8 = new Label();
+            ((System.ComponentModel.ISupportInitialize)collectionsGridView).BeginInit();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(767, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 74);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.handleAddCollection);
+            button1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button1.Location = new Point(614, 138);
+            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(101, 59);
+            button1.TabIndex = 6;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += handleAddCollection;
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(767, 486);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 74);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Import";
-            this.button2.UseVisualStyleBackColor = true;
+            button2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button2.Location = new Point(614, 389);
+            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(101, 59);
+            button2.TabIndex = 9;
+            button2.Text = "Import";
+            button2.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(767, 274);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 74);
-            this.button4.TabIndex = 55;
-            this.button4.Text = "Details";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.handleCollectionDetails);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button4.Location = new Point(614, 219);
+            button4.Margin = new Padding(2, 2, 2, 2);
+            button4.Name = "button4";
+            button4.Size = new Size(101, 59);
+            button4.TabIndex = 55;
+            button4.Text = "Details";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += handleCollectionDetails;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Red;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(767, 379);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(126, 74);
-            this.button5.TabIndex = 54;
-            this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.handleCollectionDelete);
+            button5.BackColor = Color.Red;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button5.ForeColor = Color.Transparent;
+            button5.Location = new Point(614, 303);
+            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Name = "button5";
+            button5.Size = new Size(101, 59);
+            button5.TabIndex = 54;
+            button5.Text = "Delete";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += handleCollectionDelete;
             // 
             // collectionsGridView
             // 
-            this.collectionsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.collectionsGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.collectionsGridView.Location = new System.Drawing.Point(49, 173);
-            this.collectionsGridView.Name = "collectionsGridView";
-            this.collectionsGridView.RowHeadersWidth = 62;
-            this.collectionsGridView.RowTemplate.Height = 33;
-            this.collectionsGridView.Size = new System.Drawing.Size(700, 387);
-            this.collectionsGridView.TabIndex = 53;
-            this.collectionsGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.collectionsGridView_CellDoubleClick);
+            collectionsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            collectionsGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            collectionsGridView.Location = new Point(39, 138);
+            collectionsGridView.Margin = new Padding(2, 2, 2, 2);
+            collectionsGridView.Name = "collectionsGridView";
+            collectionsGridView.ReadOnly = true;
+            collectionsGridView.RowHeadersWidth = 62;
+            collectionsGridView.RowTemplate.Height = 33;
+            collectionsGridView.Size = new Size(560, 310);
+            collectionsGridView.TabIndex = 53;
+            collectionsGridView.CellDoubleClick += collectionsGridView_CellDoubleClick;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(49, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(286, 28);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "Shows a full list of collections.";
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(39, 86);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(238, 23);
+            label7.TabIndex = 52;
+            label7.Text = "Shows a full list of collections.";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(49, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(238, 48);
-            this.label8.TabIndex = 51;
-            this.label8.Text = "Collections List";
+            label8.AutoSize = true;
+            label8.Font = new Font("Quicksand", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(39, 34);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(201, 40);
+            label8.TabIndex = 51;
+            label8.Text = "Collections List";
             // 
             // CollectionControls
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.collectionsGridView);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "CollectionControls";
-            this.Size = new System.Drawing.Size(934, 618);
-            ((System.ComponentModel.ISupportInitialize)(this.collectionsGridView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button4);
+            Controls.Add(button5);
+            Controls.Add(collectionsGridView);
+            Controls.Add(label7);
+            Controls.Add(label8);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "CollectionControls";
+            Size = new Size(747, 494);
+            ((System.ComponentModel.ISupportInitialize)collectionsGridView).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
