@@ -25,38 +25,38 @@ namespace Flash_cards.Forms.QuestionForm
         private string collectionDesc;
         private CollectionControls _collectionControls;
 
-        //Base Constructor (accessed from the AddCollectionForm.cs/Details)
-        public CollectionDetailsForm(Dictionary<string, object> crossFormInfoDict)
-        {
-            InitializeComponent();
-            _unitOfWork = new UnitOfWork();
-            _cardsCollections = _unitOfWork.CardsCollectionRepository.GetAll();
+        ////Base Constructor (accessed from the AddCollectionForm.cs/Details)
+        //public CollectionDetailsForm(Dictionary<string, object> crossFormInfoDict)
+        //{
+        //    InitializeComponent();
+        //    _unitOfWork = new UnitOfWork();
+        //    _cardsCollections = _unitOfWork.CardsCollectionRepository.GetAll();
 
-            /*Saves the information sent from the parent form (e.g. collection Name, collection Details)
-            in order to refresh the new Details of the Collection, after user hits the Update button.*/
-            _crossFormInfoDict = crossFormInfoDict;
+        //    /*Saves the information sent from the parent form (e.g. collection Name, collection Details)
+        //    in order to refresh the new Details of the Collection, after user hits the Update button.*/
+        //    _crossFormInfoDict = crossFormInfoDict;
 
-            //Sets the title to the name of the collection
-            var obj = crossFormInfoDict.GetValueOrDefault("collection");
-            CardsCollection? cardCollection = null;
-            if (obj != null)
-            {
-                cardCollection = (CardsCollection)obj;
-            }
+        //    //Sets the title to the name of the collection
+        //    var obj = crossFormInfoDict.GetValueOrDefault("collection");
+        //    CardsCollection? cardCollection = null;
+        //    if (obj != null)
+        //    {
+        //        cardCollection = (CardsCollection)obj;
+        //    }
 
-            // Variables for finding the collection (called A), then update
-            // A with new details later on.
-            _collectionName = cardCollection!.Name;
-            collectionDesc = cardCollection!.Description;
+        //    // Variables for finding the collection (called A), then update
+        //    // A with new details later on.
+        //    _collectionName = cardCollection!.Name;
+        //    collectionDesc = cardCollection!.Description;
 
-            //Updates the collection name and details on the Form.
-            questionFormTitle.Text = "Collection - " + _collectionName;
-            collectionNameTxt.Text = _collectionName;
-            collectionDescTxt.Text = collectionDesc;
+        //    //Updates the collection name and details on the Form.
+        //    questionFormTitle.Text = "Collection - " + _collectionName;
+        //    collectionNameTxt.Text = _collectionName;
+        //    collectionDescTxt.Text = collectionDesc;
 
-            refreshQuestionList();  
+        //    refreshQuestionList();  
 
-        }
+        //}
 
         //Constructor used when user chooses to update the Collection Details (name, desc)
         public CollectionDetailsForm(Dictionary<string, object> crossFormInfoDict,
@@ -82,7 +82,7 @@ namespace Flash_cards.Forms.QuestionForm
             // Variables for finding the collection (called A), then update
             // A with new details later on.
             _collectionName = cardCollection!.Name;
-            collectionDesc = cardCollection!.Description;
+            collectionDesc = cardCollection!.Description!;
 
             //Updates the collection name and details on the Form.
             questionFormTitle.Text = "Collection - " + _collectionName;
@@ -228,8 +228,8 @@ namespace Flash_cards.Forms.QuestionForm
             }
             _crossFormInfoDict.Add("selectedQuestion",_clickedCardEntry);
             UpdateQuestionForm.UpdateQuestionForm updateQuestionForm =
-                new UpdateQuestionForm.UpdateQuestionForm(_crossFormInfoDict);
-            updateQuestionForm.Show();
+                new UpdateQuestionForm.UpdateQuestionForm(_crossFormInfoDict,this);
+            updateQuestionForm.Show();            
         }
     }
 }

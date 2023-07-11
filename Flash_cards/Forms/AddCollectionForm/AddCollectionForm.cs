@@ -53,7 +53,8 @@ namespace Flash_cards.Forms.AddCollectionForm
             if (result == DialogResult.Yes)
             {
                 _infoToChild.Add("collection", cardsCollection);  
-                CollectionDetailsForm collectionDetailsForm = new CollectionDetailsForm(_infoToChild);
+                CollectionDetailsForm collectionDetailsForm = 
+                    new CollectionDetailsForm(_infoToChild,_collectionControls);
                 collectionDetailsForm.Show();
                 this.Close();
             }

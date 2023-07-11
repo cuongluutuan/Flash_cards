@@ -1,4 +1,5 @@
-﻿using Services.Models;
+﻿using Flash_cards.Forms.QuestionForm;
+using Services.Models;
 using Services.Repository;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,17 @@ namespace Flash_cards.Forms.UpdateQuestionForm
         private Dictionary<string, object> _crossFormInfoDict;
         private CardEntry _cardEntry;
         private UnitOfWork _unitOfWork;
-        public UpdateQuestionForm(Dictionary<string, object> crossFormInfoDict)
+        private CollectionDetailsForm _collectionDetailsForm;
+        public UpdateQuestionForm(Dictionary<string, object> crossFormInfoDict,
+            CollectionDetailsForm collectionDetailsForm)
         {
             InitializeComponent();
             _crossFormInfoDict = crossFormInfoDict;
             _unitOfWork= new UnitOfWork();
+            
+            /*This helps us call the refreshQuestionsList function in Parent form (CollectionDetailsForm)
+             from Child Form (UpdateQuestionForm)*/
+            _collectionDetailsForm = collectionDetailsForm;
             
             //Loads the currently selected Question
             var questionObj = _crossFormInfoDict.GetValueOrDefault("selectedQuestion");
@@ -44,8 +51,9 @@ namespace Flash_cards.Forms.UpdateQuestionForm
             }
            
             _cardEntry.Answer = answerTxt.Text;
-            _unitOfWork.CardEntryRepository.Update(_cardEntry);
+            _unitOfWork.CardEntryRepository.Update(_cardEntry);            
             _unitOfWork.Save();
+            _collectionDetailsForm.refreshQuestionList();
 
             this.Close();
         }
