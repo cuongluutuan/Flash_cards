@@ -14,11 +14,9 @@ namespace Flash_cards.UserControls
 {
     public partial class WelcomeControls : UserControl
     {
-        private UnitOfWork _unitOfWork;
-        public WelcomeControls(UnitOfWork unitOfWork)
+        public WelcomeControls()
         {
             InitializeComponent();
-            _unitOfWork = unitOfWork;
         }
 
         private void handleSelectCollection(object sender, EventArgs e)

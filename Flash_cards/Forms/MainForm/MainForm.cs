@@ -19,14 +19,12 @@ namespace Flash_cards.Forms.MainForm
         private UserControl _collectionControls;
         private UserControl _questionsBankControls;
         private Control _currentControl;
-        private UnitOfWork _unitOfWork;
         public MainForm()
         {
             InitializeComponent();
-            _unitOfWork = new UnitOfWork();
-            _welcomeControls = new WelcomeControls(_unitOfWork);
+            _welcomeControls = new WelcomeControls();
             _collectionControls = new CollectionControls();
-            _questionsBankControls = new QuestionsBankControls(_unitOfWork);
+            _questionsBankControls = new QuestionsBankControls();
 
             _currentControl = _welcomeControls;
             mainUIPanel.Controls.Clear();

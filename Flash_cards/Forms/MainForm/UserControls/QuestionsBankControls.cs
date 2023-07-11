@@ -14,11 +14,9 @@ namespace Flash_cards.UserControls
     public partial class QuestionsBankControls : UserControl
     {
         private string[] options = { "Q&A Keywords", "Collections" };
-        private UnitOfWork _unitOfWork;
-        public QuestionsBankControls(UnitOfWork unitOfWork)
+        public QuestionsBankControls()
         {
             InitializeComponent();
-            _unitOfWork = unitOfWork;
             foreach (String option in options)
             {
                 searchFilterComboBox.Items.Add(option);
