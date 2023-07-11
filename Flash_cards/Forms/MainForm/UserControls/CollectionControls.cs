@@ -18,7 +18,7 @@ namespace Flash_cards.UserControls
     {
         private UnitOfWork _unitOfWork;
         private List<CardsCollection> _cardsCollections;
-        private CardsCollection ?_clickedCardsCollection;
+        private CardsCollection? _clickedCardsCollection;
         private Dictionary<string, object> _crossFormInfoDict;
         public CollectionControls()
         {
@@ -45,12 +45,13 @@ namespace Flash_cards.UserControls
             string[] columnNames = { "Name", "Description" };
             int[] columnWidths = { 300, 348 };
             collectionsGridView.AutoGenerateColumns = false;
-            
-            for(int index=0;index<columnNames.Length;index++) { 
+
+            for (int index = 0; index < columnNames.Length; index++)
+            {
                 DataGridViewTextBoxColumn dataGridViewTextBoxColumn
-                    = new DataGridViewTextBoxColumn();  
+                    = new DataGridViewTextBoxColumn();
                 //The column name (in the CardCollections Entity) to get the data from.
-                dataGridViewTextBoxColumn.DataPropertyName = columnNames[index];    
+                dataGridViewTextBoxColumn.DataPropertyName = columnNames[index];
                 dataGridViewTextBoxColumn.HeaderText = columnNames[index];
                 dataGridViewTextBoxColumn.Width = columnWidths[index];
                 collectionsGridView.Columns.Add(dataGridViewTextBoxColumn);
@@ -97,9 +98,9 @@ namespace Flash_cards.UserControls
                     "Read this carefully", MessageBoxButtons.OK);
                 return;
             }
-            
+
             DialogResult res = MessageBox.Show("Do you really want to delete the following Collection:\n\n" +
-                "  Name: "+_clickedCardsCollection.Name+
+                "  Name: " + _clickedCardsCollection.Name +
                 "\n  Description: " + _clickedCardsCollection.Description +
                 "\n\nAny changes is irreversible!",
                 "Read this carefully", MessageBoxButtons.OKCancel);
@@ -109,8 +110,8 @@ namespace Flash_cards.UserControls
                 _unitOfWork.Save();
                 //Removes the deleted collection from the clickedCardsCollection
                 //To prevent accidental deletion of non-existent object.
-                _clickedCardsCollection = null; 
-                refreshList();                
+                _clickedCardsCollection = null;
+                refreshList();
             }
 
         }

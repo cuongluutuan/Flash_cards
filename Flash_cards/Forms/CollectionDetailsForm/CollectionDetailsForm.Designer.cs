@@ -28,208 +28,224 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.questionFormTitle = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.questionsGridView = new System.Windows.Forms.DataGridView();
-            this.collectionDescTxt = new System.Windows.Forms.TextBox();
-            this.collectionNameTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsGridView)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            questionFormTitle = new Label();
+            button4 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            label1 = new Label();
+            button3 = new Button();
+            questionsGridView = new DataGridView();
+            collectionDescTxt = new TextBox();
+            collectionNameTxt = new TextBox();
+            label4 = new Label();
+            label2 = new Label();
+            label5 = new Label();
+            label3 = new Label();
+            button5 = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)questionsGridView).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.questionFormTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 82);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(questionFormTitle);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(545, 49);
+            panel1.TabIndex = 0;
             // 
             // questionFormTitle
             // 
-            this.questionFormTitle.AutoSize = true;
-            this.questionFormTitle.Font = new System.Drawing.Font("Quicksand SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.questionFormTitle.ForeColor = System.Drawing.Color.Transparent;
-            this.questionFormTitle.Location = new System.Drawing.Point(36, 21);
-            this.questionFormTitle.Name = "questionFormTitle";
-            this.questionFormTitle.Size = new System.Drawing.Size(42, 41);
-            this.questionFormTitle.TabIndex = 0;
-            this.questionFormTitle.Text = "\"\"";
+            questionFormTitle.AutoSize = true;
+            questionFormTitle.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            questionFormTitle.ForeColor = Color.Transparent;
+            questionFormTitle.Location = new Point(25, 13);
+            questionFormTitle.Margin = new Padding(2, 0, 2, 0);
+            questionFormTitle.Name = "questionFormTitle";
+            questionFormTitle.Size = new Size(26, 24);
+            questionFormTitle.TabIndex = 0;
+            questionFormTitle.Text = "\"\"";
             // 
             // button4
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(626, 584);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 34);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.handleQuestionUpdate);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Location = new Point(438, 353);
+            button4.Margin = new Padding(2, 2, 2, 2);
+            button4.Name = "button4";
+            button4.Size = new Size(71, 23);
+            button4.TabIndex = 47;
+            button4.Text = "Update";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += handleQuestionUpdate;
             // 
             // button2
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(626, 527);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 34);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.handleAddQuestion);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(438, 316);
+            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(71, 22);
+            button2.TabIndex = 46;
+            button2.Text = "Add";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += handleAddQuestion;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(626, 644);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 34);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.handleDeleteQuestion);
+            button1.BackColor = Color.Red;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.Transparent;
+            button1.Location = new Point(438, 389);
+            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(71, 24);
+            button1.TabIndex = 45;
+            button1.Text = "Delete";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += handleDeleteQuestion;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(46, 461);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 48);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "Questions List";
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(32, 277);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(150, 26);
+            label1.TabIndex = 44;
+            label1.Text = "Questions List";
             // 
             // button3
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(538, 393);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 34);
-            this.button3.TabIndex = 42;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.handleUpdateCollectionDetails);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(377, 236);
+            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(83, 24);
+            button3.TabIndex = 42;
+            button3.Text = "Update";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += handleUpdateCollectionDetails;
             // 
             // questionsGridView
             // 
-            this.questionsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.questionsGridView.Location = new System.Drawing.Point(46, 527);
-            this.questionsGridView.Name = "questionsGridView";
-            this.questionsGridView.RowHeadersWidth = 62;
-            this.questionsGridView.RowTemplate.Height = 33;
-            this.questionsGridView.Size = new System.Drawing.Size(560, 225);
-            this.questionsGridView.TabIndex = 41;
-            this.questionsGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.questionsGridView_CellMouseDoubleClick);
+            questionsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            questionsGridView.Location = new Point(32, 316);
+            questionsGridView.Margin = new Padding(2, 2, 2, 2);
+            questionsGridView.Name = "questionsGridView";
+            questionsGridView.ReadOnly = true;
+            questionsGridView.RowHeadersWidth = 62;
+            questionsGridView.RowTemplate.Height = 33;
+            questionsGridView.Size = new Size(392, 154);
+            questionsGridView.TabIndex = 41;
+            questionsGridView.CellMouseDoubleClick += questionsGridView_CellMouseDoubleClick;
             // 
             // collectionDescTxt
             // 
-            this.collectionDescTxt.Location = new System.Drawing.Point(187, 325);
-            this.collectionDescTxt.Name = "collectionDescTxt";
-            this.collectionDescTxt.Size = new System.Drawing.Size(469, 31);
-            this.collectionDescTxt.TabIndex = 40;
+            collectionDescTxt.Location = new Point(131, 195);
+            collectionDescTxt.Margin = new Padding(2, 2, 2, 2);
+            collectionDescTxt.Name = "collectionDescTxt";
+            collectionDescTxt.Size = new Size(330, 23);
+            collectionDescTxt.TabIndex = 40;
             // 
             // collectionNameTxt
             // 
-            this.collectionNameTxt.Location = new System.Drawing.Point(187, 256);
-            this.collectionNameTxt.Name = "collectionNameTxt";
-            this.collectionNameTxt.Size = new System.Drawing.Size(469, 31);
-            this.collectionNameTxt.TabIndex = 39;
+            collectionNameTxt.Location = new Point(131, 154);
+            collectionNameTxt.Margin = new Padding(2, 2, 2, 2);
+            collectionNameTxt.Name = "collectionNameTxt";
+            collectionNameTxt.Size = new Size(330, 23);
+            collectionNameTxt.TabIndex = 39;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(45, 322);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 32);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "Description";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(32, 193);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(94, 21);
+            label4.TabIndex = 38;
+            label4.Text = "Description";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(45, 253);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 32);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Name";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(32, 152);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(53, 21);
+            label2.TabIndex = 37;
+            label2.Text = "Name";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(46, 173);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(428, 28);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Changes the collection name and description.";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(32, 104);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(294, 19);
+            label5.TabIndex = 36;
+            label5.Text = "Changes the collection name and description.";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(46, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(273, 48);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Collection Details";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(32, 64);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(181, 26);
+            label3.TabIndex = 35;
+            label3.Text = "Collection Details";
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button5.ForeColor = System.Drawing.Color.Transparent;
-            this.button5.Location = new System.Drawing.Point(626, 705);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(101, 47);
-            this.button5.TabIndex = 43;
-            this.button5.Text = "Learn";
-            this.button5.UseVisualStyleBackColor = false;
+            button5.BackColor = Color.FromArgb(0, 0, 64);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button5.ForeColor = Color.Transparent;
+            button5.Location = new Point(438, 434);
+            button5.Margin = new Padding(2, 2, 2, 2);
+            button5.Name = "button5";
+            button5.Size = new Size(71, 36);
+            button5.TabIndex = 43;
+            button5.Text = "Learn";
+            button5.UseVisualStyleBackColor = false;
             // 
             // CollectionDetailsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 768);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.questionsGridView);
-            this.Controls.Add(this.collectionDescTxt);
-            this.Controls.Add(this.collectionNameTxt);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "CollectionDetailsForm";
-            this.Text = "QuestionForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsGridView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(545, 481);
+            Controls.Add(button4);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(label1);
+            Controls.Add(button5);
+            Controls.Add(button3);
+            Controls.Add(questionsGridView);
+            Controls.Add(collectionDescTxt);
+            Controls.Add(collectionNameTxt);
+            Controls.Add(label4);
+            Controls.Add(label2);
+            Controls.Add(label5);
+            Controls.Add(label3);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "CollectionDetailsForm";
+            Text = "QuestionForm";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)questionsGridView).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

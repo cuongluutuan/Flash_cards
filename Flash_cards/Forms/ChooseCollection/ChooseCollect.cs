@@ -73,7 +73,8 @@ namespace Flash_cards.Forms.LearnForm
             this.Close();
 
         }
-        private void loadQuestionNumber() {
+        private void loadQuestionNumber()
+        {
             CardsCollection selectedCardsCollection = _cardsCollections
                .FirstOrDefault(card => card.Name == collectionComboBox.Text);
 
