@@ -28,57 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.questionLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            label1 = new Label();
+            questionLayoutPanel = new FlowLayoutPanel();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1210, 128);
-            this.panel1.TabIndex = 14;
+            panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1210, 128);
+            panel1.TabIndex = 14;
+            panel1.Paint += panel1_Paint;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Quicksand SemiBold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(61, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 59);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Learn Flashcards";
+            label1.AutoSize = true;
+            label1.Font = new Font("Quicksand SemiBold", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Transparent;
+            label1.Location = new Point(61, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(353, 59);
+            label1.TabIndex = 7;
+            label1.Text = "Learn Flashcards";
             // 
             // questionLayoutPanel
             // 
-            this.questionLayoutPanel.AutoScroll = true;
-            this.questionLayoutPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.questionLayoutPanel.Location = new System.Drawing.Point(0, 125);
-            this.questionLayoutPanel.Name = "questionLayoutPanel";
-            this.questionLayoutPanel.Size = new System.Drawing.Size(1210, 587);
-            this.questionLayoutPanel.TabIndex = 15;
+            questionLayoutPanel.AutoScroll = true;
+            questionLayoutPanel.Dock = DockStyle.Bottom;
+            questionLayoutPanel.Location = new Point(0, 125);
+            questionLayoutPanel.Name = "questionLayoutPanel";
+            questionLayoutPanel.Size = new Size(1210, 587);
+            questionLayoutPanel.TabIndex = 15;
+            questionLayoutPanel.Paint += questionLayoutPanel_Paint;
             // 
             // FlashcardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1210, 712);
-            this.Controls.Add(this.questionLayoutPanel);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FlashcardForm";
-            this.Text = "Learn";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1210, 712);
+            Controls.Add(questionLayoutPanel);
+            Controls.Add(panel1);
+            Margin = new Padding(4);
+            Name = "FlashcardForm";
+            Text = "Learn";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

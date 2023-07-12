@@ -28,74 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.questionLabel = new System.Windows.Forms.Label();
-            this.answer1 = new System.Windows.Forms.Button();
-            this.answer2 = new System.Windows.Forms.Button();
-            this.answer3 = new System.Windows.Forms.Button();
-            this.answer4 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            questionLabel = new Label();
+            answer1 = new Button();
+            answer2 = new Button();
+            answer3 = new Button();
+            answer4 = new Button();
+            button1 = new Button();
+            button2 = new Button();
+            SuspendLayout();
             // 
             // questionLabel
             // 
-            this.questionLabel.AutoSize = true;
-            this.questionLabel.Font = new System.Drawing.Font("Quicksand SemiBold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.questionLabel.Location = new System.Drawing.Point(104, 73);
-            this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(283, 48);
-            this.questionLabel.TabIndex = 0;
-            this.questionLabel.Text = "Dummy Question";
+            questionLabel.AutoSize = true;
+            questionLabel.Font = new Font("Quicksand SemiBold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            questionLabel.Location = new Point(104, 73);
+            questionLabel.Name = "questionLabel";
+            questionLabel.Size = new Size(283, 48);
+            questionLabel.TabIndex = 0;
+            questionLabel.Text = "Dummy Question";
             // 
             // answer1
             // 
-            this.answer1.Location = new System.Drawing.Point(104, 170);
-            this.answer1.Name = "answer1";
-            this.answer1.Size = new System.Drawing.Size(471, 74);
-            this.answer1.TabIndex = 1;
-            this.answer1.Text = "button1";
-            this.answer1.UseVisualStyleBackColor = true;
+            answer1.Location = new Point(104, 170);
+            answer1.Name = "answer1";
+            answer1.Size = new Size(471, 74);
+            answer1.TabIndex = 1;
+            answer1.Text = "button1";
+            answer1.UseVisualStyleBackColor = true;
+            answer1.Click += answer1_Click;
             // 
             // answer2
             // 
-            this.answer2.Location = new System.Drawing.Point(628, 170);
-            this.answer2.Name = "answer2";
-            this.answer2.Size = new System.Drawing.Size(470, 74);
-            this.answer2.TabIndex = 2;
-            this.answer2.Text = "button2";
-            this.answer2.UseVisualStyleBackColor = true;
+            answer2.Location = new Point(628, 170);
+            answer2.Name = "answer2";
+            answer2.Size = new Size(470, 74);
+            answer2.TabIndex = 2;
+            answer2.Text = "button2";
+            answer2.UseVisualStyleBackColor = true;
+            answer2.Click += answer2_Click;
             // 
             // answer3
             // 
-            this.answer3.Location = new System.Drawing.Point(104, 289);
-            this.answer3.Name = "answer3";
-            this.answer3.Size = new System.Drawing.Size(471, 74);
-            this.answer3.TabIndex = 3;
-            this.answer3.Text = "button3";
-            this.answer3.UseVisualStyleBackColor = true;
+            answer3.Location = new Point(104, 289);
+            answer3.Name = "answer3";
+            answer3.Size = new Size(471, 74);
+            answer3.TabIndex = 3;
+            answer3.Text = "button3";
+            answer3.UseVisualStyleBackColor = true;
+            answer3.Click += answer_3_click;
             // 
             // answer4
             // 
-            this.answer4.Location = new System.Drawing.Point(628, 289);
-            this.answer4.Name = "answer4";
-            this.answer4.Size = new System.Drawing.Size(471, 74);
-            this.answer4.TabIndex = 4;
-            this.answer4.Text = "button4";
-            this.answer4.UseVisualStyleBackColor = true;
+            answer4.Location = new Point(628, 289);
+            answer4.Name = "answer4";
+            answer4.Size = new Size(471, 74);
+            answer4.TabIndex = 4;
+            answer4.Text = "button4";
+            answer4.UseVisualStyleBackColor = true;
+            answer4.Click += answer_4_click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(920, 452);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 5;
+            button1.Text = "next";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += handleNextQuestion;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(711, 452);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 6;
+            button2.Text = "previous";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += handlePrevQuestion;
             // 
             // QuestionControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.answer4);
-            this.Controls.Add(this.answer3);
-            this.Controls.Add(this.answer2);
-            this.Controls.Add(this.answer1);
-            this.Controls.Add(this.questionLabel);
-            this.Name = "QuestionControl";
-            this.Size = new System.Drawing.Size(1208, 585);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(answer4);
+            Controls.Add(answer3);
+            Controls.Add(answer2);
+            Controls.Add(answer1);
+            Controls.Add(questionLabel);
+            Name = "QuestionControl";
+            Size = new Size(1208, 585);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -103,6 +130,10 @@
         private Label questionLabel;
         private Button answer1;
         private Button answer2;
+        private Button button3;
+        private Button button4;
+        private Button button1;
+        private Button button2;
         private Button answer3;
         private Button answer4;
     }

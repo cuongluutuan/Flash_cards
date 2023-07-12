@@ -67,6 +67,8 @@
             this.collectionComboBox.Size = new System.Drawing.Size(346, 33);
             this.collectionComboBox.TabIndex = 34;
             this.collectionComboBox.SelectedIndexChanged += new System.EventHandler(this.handleLoadQuestionNumber);
+            this.collectionComboBox.DisplayMember = "Text";
+            this.collectionComboBox.ValueMember = "Value";
             // 
             // label3
             // 

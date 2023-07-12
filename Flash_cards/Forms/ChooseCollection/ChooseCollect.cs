@@ -34,9 +34,12 @@ namespace Flash_cards.Forms.LearnForm
             string[] collectionNames = _cardsCollections
                 .Select(collection => collection.Name)
                 .ToArray();
-            foreach (string collectionName in collectionNames)
+            foreach (CardsCollection collection in _cardsCollections)
             {
-                collectionComboBox.Items.Add(collectionName);
+                
+                collectionComboBox.Items.Add(new { Text = collection.Name, Value = collection.Id });
+                
+
             }
 
         }
@@ -69,6 +72,11 @@ namespace Flash_cards.Forms.LearnForm
             }
 
             FlashcardForm flashcardForm = new FlashcardForm(_crossFormInfoDict);
+
+            //int selectedItemIndex = (collectionComboBox.SelectedItem as dynamic).Value;  
+            
+
+            //FlashcardForm flashcardForm = new FlashcardForm(selectedItemIndex);
             flashcardForm.Show();
             this.Close();
 
