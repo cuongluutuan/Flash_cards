@@ -27,20 +27,19 @@ namespace Flash_cards.Question
         private Dictionary<string, object> _crossFormInfoDict;
         private CardsCollection _cardsCollection;
         private List<CardEntry> _allCardEntriesInCollection;
-        private List<QaDTO> qaDTOs;
-        private List<string> _answerList;
-        private int _questionNumber;
+        private Queue<QaDTO> qaDTOs;
+        private List<string> _answerList;        
         private int _currentQuestionIndex = 0;
         private Dictionary<string, List<string>> _oneQuestionWithManyAnsDict;
         private QuestionControl currentQuestionControl;
+        private int correctAnswersNum = 0;
+        private int totalScore = 0;
 
         public FlashcardForm(Dictionary<string, object> crossFormInfoDict)
         {
 
             InitializeComponent();
-            _crossFormInfoDict = crossFormInfoDict;
-            var qNumberObj = crossFormInfoDict.GetValueOrDefault("questionNumber");
-            if (qNumberObj != null) _questionNumber = Convert.ToInt32(qNumberObj);
+            _crossFormInfoDict = crossFormInfoDict;            
             runAsyncTasks();
 
 
@@ -101,7 +100,7 @@ namespace Flash_cards.Question
 
 
             _oneQuestionWithManyAnsDict = new Dictionary<string, List<string>>();
-            qaDTOs = new List<QaDTO>();
+            qaDTOs = new Queue<QaDTO>();
             /*1. Gets the selected Collection */
             var collectionObj = _crossFormInfoDict.GetValueOrDefault("collection");
             if (collectionObj != null)
@@ -129,7 +128,8 @@ namespace Flash_cards.Question
 
         }
 
-        private List<string> falseAnswerGenerator(string correctAnswer) {
+        private List<string> falseAnswerGenerator(string correctAnswer)
+        {
 
             /*3. Generates 3 random false answers to fill up the answerListPerQuestion.*/
             List<string> result = new List<string>();
@@ -159,6 +159,13 @@ namespace Flash_cards.Question
 
             return result;
         }
+        private void updateDefaultQuestionNumber(int totalScore)
+        {
+            this.questionLayoutPanel.Invoke((MethodInvoker)delegate
+            {
+                correctAnswers.Text = $"Correct answers: 0/{totalScore}";
+            });
+        }
         private void generateQuestionsAnswersList()
         {
             List<string> falseAnswerListPerQuestion = new List<string>();
@@ -166,7 +173,7 @@ namespace Flash_cards.Question
             List<int> whitelistedIndex = new List<int>();
 
             Random rnd = new Random();
-            for (int index = 0; index < _questionNumber; index++) //Generates 10 questions+answersList pairs.
+            for (int index = 0; index < _allCardEntriesInCollection.Count; index++) //Generates 10 questions+answersList pairs.
             {
                 /*0: For each generated question, reset its answer list and random index.*/
                 QaDTO eachQaDTO = new QaDTO();
@@ -189,11 +196,13 @@ namespace Flash_cards.Question
                 eachQaDTO.question = question;
                 eachQaDTO.correctAns = correctAnswer;
                 eachQaDTO.falseAnswers = falseAnswerGenerator(correctAnswer);
-                qaDTOs.Add(eachQaDTO);
+                qaDTOs.Enqueue(eachQaDTO);
+                updateDefaultQuestionNumber(qaDTOs.Count);
 
-                                
-                
             }
+            /*Refreshes the number of correct answers over total number of questions on Screen*/
+            totalScore = qaDTOs.Count;
+            
 
 
         }
@@ -205,45 +214,63 @@ namespace Flash_cards.Question
             this.questionLayoutPanel.Invoke((MethodInvoker)delegate
             {
 
-                QuestionControl questionControl = new QuestionControl(qaDTOs[_currentQuestionIndex],this);
+                QuestionControl questionControl = new QuestionControl(qaDTOs.Dequeue(), this);
                 currentQuestionControl = questionControl;
                 questionLayoutPanel.Controls.Add(questionControl);
             });
+        }
+
+        public void handleFalseAnswer(QaDTO qaDTO)
+        {
+            qaDTOs.Enqueue(qaDTO);
         }
         public void showNextQuestion()
         {
             this.questionLayoutPanel.Invoke((MethodInvoker)delegate
             {
-                if (_currentQuestionIndex < qaDTOs.Count)
+                if (correctAnswersNum < totalScore)
                 {
-
-
                     questionLayoutPanel.Controls.Remove(currentQuestionControl);
-                    
-                    QuestionControl questionControl = new QuestionControl(qaDTOs[_currentQuestionIndex], this);
-                    _currentQuestionIndex += 1;
+
+                    QuestionControl questionControl = new QuestionControl(qaDTOs.Dequeue(), this);
                     currentQuestionControl = questionControl;
                     questionLayoutPanel.Controls.Add(questionControl);
-
                 }
+                else {
+                    DialogResult res =  MessageBox.Show("Congratulations! You have finished studying everything!","Information",MessageBoxButtons.OK);
+                    if(res == DialogResult.OK) { this.Close(); }                    
+                }
+
             });
         }
         public void showPrevQuestion()
         {
-            this.questionLayoutPanel.Invoke((MethodInvoker)delegate
-            {
-                if (_currentQuestionIndex > 0)
-                {
-                    questionLayoutPanel.Controls.Remove(currentQuestionControl);
-                    
-                    QuestionControl questionControl = new QuestionControl(qaDTOs[_currentQuestionIndex], this);
-                    _currentQuestionIndex -= 1;
-                    currentQuestionControl = questionControl;
-                    questionLayoutPanel.Controls.Add(questionControl);
-                }
-            });
-        }
+            //this.questionLayoutPanel.Invoke((MethodInvoker)delegate
+            //{
+            //    if (_currentQuestionIndex > 0)
+            //    {
+            //        questionLayoutPanel.Controls.Remove(currentQuestionControl);
 
+            //        int index = _currentQuestionIndex;
+            //        int size = qaDTOs.Count;
+            //        QuestionControl questionControl = new QuestionControl(qaDTOs[_currentQuestionIndex], this);
+            //        _currentQuestionIndex -= 1;
+            //        currentQuestionControl = questionControl;
+            //        questionLayoutPanel.Controls.Add(questionControl);
+            //    }
+            //});
+        }
+        public void updateScore()
+        {
+
+
+            if (correctAnswersNum <= totalScore)
+            {
+                correctAnswersNum++;
+                correctAnswers.Text = $"Correct answers: {correctAnswersNum}/{totalScore}";
+            }
+
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

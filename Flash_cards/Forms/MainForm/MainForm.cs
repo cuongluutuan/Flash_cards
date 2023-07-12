@@ -29,8 +29,7 @@ namespace Flash_cards.Forms.MainForm
             _questionsBankControls = new QuestionsBankControls(_unitOfWork);
 
             _currentControl = _welcomeControls;
-            mainUIPanel.Controls.Clear();
-            ToScrollable(mainUIPanel);
+            mainUIPanel.Controls.Clear();            
             mainUIPanel.Controls.Add(_currentControl);
         }
         private void ToScrollable(Panel panel)
@@ -65,12 +64,12 @@ namespace Flash_cards.Forms.MainForm
             ChangeControl(mainUIPanel, _questionsBankControls);
         }
 
-    
+
         private void handleFlashcardsControl(object sender, EventArgs e)
         {
-            
+
         }
 
-       
+
     }
 }

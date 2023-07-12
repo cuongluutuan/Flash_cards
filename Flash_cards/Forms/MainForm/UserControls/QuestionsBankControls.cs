@@ -13,7 +13,7 @@ namespace Flash_cards.UserControls
 {
     public partial class QuestionsBankControls : UserControl
     {
-        private string[] options = { "Q&A Keywords", "Collections" };
+        private string[] options = { "Questions", "Answers" };
         private UnitOfWork _unitOfWork;
         public QuestionsBankControls(UnitOfWork unitOfWork)
         {
@@ -23,6 +23,12 @@ namespace Flash_cards.UserControls
             {
                 searchFilterComboBox.Items.Add(option);
             }
+
+
+        }
+
+        private void searchFilterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -36,9 +36,9 @@ namespace Flash_cards.Forms.LearnForm
                 .ToArray();
             foreach (CardsCollection collection in _cardsCollections)
             {
-                
+
                 collectionComboBox.Items.Add(new { Text = collection.Name, Value = collection.Id });
-                
+
 
             }
 
@@ -74,14 +74,15 @@ namespace Flash_cards.Forms.LearnForm
             FlashcardForm flashcardForm = new FlashcardForm(_crossFormInfoDict);
 
             //int selectedItemIndex = (collectionComboBox.SelectedItem as dynamic).Value;  
-            
+
 
             //FlashcardForm flashcardForm = new FlashcardForm(selectedItemIndex);
             flashcardForm.Show();
             this.Close();
 
         }
-        private void loadQuestionNumber() {
+        private void loadQuestionNumber()
+        {
             CardsCollection selectedCardsCollection = _cardsCollections
                .FirstOrDefault(card => card.Name == collectionComboBox.Text);
 
@@ -90,24 +91,8 @@ namespace Flash_cards.Forms.LearnForm
                 .ToList();
             _questionNumber = _cardEntryList.Count;
         }
-        private void handleLoadQuestionNumber(object sender, EventArgs e)
-        {
-            loadQuestionNumber();
-            questionNumberComboBox.Items.Clear();
-            for (int count = 1; count <= _questionNumber; count++)
-            {
-                questionNumberComboBox.Items.Add(count);
-            }
+        
 
-        }
-
-        private void handleChangeQuestionNumber(object sender, EventArgs e)
-        {
-            if (_crossFormInfoDict.ContainsKey("questionNumber"))
-            {
-                _crossFormInfoDict.Remove("questionNumber");
-            }
-            _crossFormInfoDict.Add("questionNumber", Int32.Parse(questionNumberComboBox.Text));
-        }
+        
     }
 }

@@ -31,12 +31,14 @@
             panel1 = new Panel();
             label1 = new Label();
             questionLayoutPanel = new FlowLayoutPanel();
+            correctAnswers = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 64);
+            panel1.Controls.Add(correctAnswers);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -66,6 +68,17 @@
             questionLayoutPanel.TabIndex = 15;
             questionLayoutPanel.Paint += questionLayoutPanel_Paint;
             // 
+            // correctAnswers
+            // 
+            correctAnswers.AutoSize = true;
+            correctAnswers.Font = new Font("Segoe UI", 16F, FontStyle.Italic, GraphicsUnit.Point);
+            correctAnswers.ForeColor = Color.Transparent;
+            correctAnswers.Location = new Point(779, 51);
+            correctAnswers.Name = "correctAnswers";
+            correctAnswers.Size = new Size(258, 45);
+            correctAnswers.TabIndex = 8;
+            correctAnswers.Text = "Correct Answers: ";
+            // 
             // FlashcardForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -86,5 +99,6 @@
         private Panel panel1;
         private Label label1;
         private FlowLayoutPanel questionLayoutPanel;
+        private Label correctAnswers;
     }
 }

@@ -33,8 +33,7 @@
             answer2 = new Button();
             answer3 = new Button();
             answer4 = new Button();
-            button1 = new Button();
-            button2 = new Button();
+            nextBtn = new Button();
             SuspendLayout();
             // 
             // questionLabel
@@ -87,33 +86,23 @@
             answer4.UseVisualStyleBackColor = true;
             answer4.Click += answer_4_click;
             // 
-            // button1
+            // nextBtn
             // 
-            button1.Location = new Point(920, 452);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 5;
-            button1.Text = "next";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += handleNextQuestion;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(711, 452);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 6;
-            button2.Text = "previous";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += handlePrevQuestion;
+            nextBtn.Location = new Point(920, 452);
+            nextBtn.Name = "nextBtn";
+            nextBtn.Size = new Size(112, 34);
+            nextBtn.TabIndex = 5;
+            nextBtn.Text = "next";
+            nextBtn.UseVisualStyleBackColor = true;
+            nextBtn.Visible = false;
+            nextBtn.Click += handleNextQuestion;
             // 
             // QuestionControl
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(nextBtn);
             Controls.Add(answer4);
             Controls.Add(answer3);
             Controls.Add(answer2);
@@ -132,8 +121,7 @@
         private Button answer2;
         private Button button3;
         private Button button4;
-        private Button button1;
-        private Button button2;
+        private Button nextBtn;
         private Button answer3;
         private Button answer4;
     }

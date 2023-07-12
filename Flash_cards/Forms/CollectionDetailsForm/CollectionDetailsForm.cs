@@ -89,11 +89,12 @@ namespace Flash_cards.Forms.QuestionForm
             collectionNameTxt.Text = _collectionName;
             collectionDescTxt.Text = collectionDesc;
 
-            refreshQuestionList();  
-           
+            refreshQuestionList();
+
         }
 
-        public void refreshQuestionList() { 
+        public void refreshQuestionList()
+        {
             _unitOfWork = new UnitOfWork();
             // 4. Updates the question list of that form
             CardsCollection cardsCollectionFullDetails = _cardsCollections
@@ -109,8 +110,8 @@ namespace Flash_cards.Forms.QuestionForm
 
             //Filters out the columns to be shown on the DataGridView
             //should be the same as the columns in the database
-            string[] columnNames = { "Question", "Answer" }; 
-            int[] columnWidths = { 280, 280};
+            string[] columnNames = { "Question", "Answer" };
+            int[] columnWidths = { 280, 280 };
             questionsGridView.AutoGenerateColumns = false;
 
             for (int index = 0; index < columnNames.Length; index++)
@@ -177,10 +178,10 @@ namespace Flash_cards.Forms.QuestionForm
         }
 
         private void handleAddQuestion(object sender, EventArgs e)
-        {            
-            
-            AddQuestionForm.AddQuestionForm addQuestionForm = 
-                new AddQuestionForm.AddQuestionForm(_crossFormInfoDict,this);
+        {
+
+            AddQuestionForm.AddQuestionForm addQuestionForm =
+                new AddQuestionForm.AddQuestionForm(_crossFormInfoDict, this);
             addQuestionForm.Show();
         }
 
@@ -208,16 +209,17 @@ namespace Flash_cards.Forms.QuestionForm
                 refreshQuestionList();
             }
 
-        }          
+        }
 
         private void questionsGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             _clickedCardEntry = _cardEntries[e.RowIndex];
-        }    
+        }
 
         private void handleQuestionUpdate(object sender, EventArgs e)
         {
-            if (_crossFormInfoDict.ContainsKey("selectedQuestion")) {
+            if (_crossFormInfoDict.ContainsKey("selectedQuestion"))
+            {
                 _crossFormInfoDict.Remove("selectedQuestion");
             }
             if (_clickedCardEntry == null)
@@ -226,10 +228,10 @@ namespace Flash_cards.Forms.QuestionForm
                     "Read this carefully", MessageBoxButtons.OK);
                 return;
             }
-            _crossFormInfoDict.Add("selectedQuestion",_clickedCardEntry);
+            _crossFormInfoDict.Add("selectedQuestion", _clickedCardEntry);
             UpdateQuestionForm.UpdateQuestionForm updateQuestionForm =
-                new UpdateQuestionForm.UpdateQuestionForm(_crossFormInfoDict,this);
-            updateQuestionForm.Show();            
+                new UpdateQuestionForm.UpdateQuestionForm(_crossFormInfoDict, this);
+            updateQuestionForm.Show();
         }
     }
 }

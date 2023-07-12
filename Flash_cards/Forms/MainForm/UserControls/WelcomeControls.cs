@@ -24,7 +24,7 @@ namespace Flash_cards.UserControls
         private void handleSelectCollection(object sender, EventArgs e)
         {
             ChooseCollect learnForm = new ChooseCollect();
-            learnForm.Show();   
+            learnForm.Show();
         }
     }
 }
